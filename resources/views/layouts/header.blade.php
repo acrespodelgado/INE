@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#"><img src="img/pillatubuga.png" alt="pillatubuga" class="img-fluid"></a>
+        <a class="navbar-brand" href="{{url('')}}"><img src="{{url('img/pillatubuga.png')}}" alt="pillatubuga" class="img-fluid"></a>
         <button class="navbar-toggler hamburger hamburger--3dx" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -9,7 +9,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Buscador</a>
+                    <input class="searchbar" type="text" name="search" placeholder="Buscar">
+                    <button class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Vender</a>
@@ -17,8 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Modelos</a>
                 </li>
-                <li class="nav-item align-right">
-                    <a class="nav-link" href="#">Mi cuenta</a>
+                <li class="nav-item m-left flex">
+                    <a class="nav-link nav-user" href="#">Adrián</a>
+                    <img src="{{url('img/user-1.jpg')}}" href="user-image" class="rounded-circle">
                 </li>
             </ul>
         </div>

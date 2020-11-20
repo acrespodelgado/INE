@@ -6,6 +6,8 @@ body {
     --main-bg-color: #ffce33;
     --main-light-color: #eee;
     --main-dark-color: #1f2532;
+    --main-old-color: red;
+    --main-blue-color: #5274bd;
 }
 
 .wh-100 {
@@ -13,8 +15,71 @@ body {
     height: 100%;
 }
 
+.img-fluid-inverse {
+    height: 100%;
+    width: auto;
+}
+
+.p-0 {
+    padding: 0;
+}
+
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     background-color: var(--main-dark-color);
+}
+
+.dark-background {
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.flex {
+    display: inline-flex;
+}
+
+.center {
+    text-align: center;
+}
+
+.m-05 {
+    margin: 0 5px;
+}
+
+.m-20 {
+    margin: 20px 0;
+}
+
+.m-40 {
+    margin: 40px 0;
+}
+
+.m-left {
+    margin-left: auto !important;
+}
+
+.old {
+    color: var(--main-old-color);
+    text-decoration: line-through;
+}
+
+
+span.blue {
+    display: block;
+    text-align: center;
+    height: 3px;
+    width: 30px;
+    border-bottom: 2px solid var(--main-blue-color);
+    margin: 10px auto 10px auto;
+}
+ 
+span.yellow {
+    display: block;
+    text-align: center;
+    height: 3px;
+    width: 30px;
+    border-bottom: 2px solid var(--main-bg-color);
+    margin: 10px auto 5px auto;
 }
 
 /* HEADER Y NAVS */
@@ -23,18 +88,52 @@ body {
     margin: 15px;
 }
 
+.navbar-nav .nav-item .btn {
+    vertical-align: bottom;
+}
+.navbar-nav .nav-item .btn .fa {
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-item .btn:focus {
+    box-shadow: none;
+}
+
+.navbar-nav .nav-item .btn:focus .fa {
+    transition: all 0.2s ease-in-out;
+    color: var(--main-bg-color);
+}
+
 .navbar-nav .nav-link {
     text-transform: uppercase;
     color: black;
     letter-spacing: 1.1px;
     font-weight: 400;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--main-dark-color);
+}
+
+.navbar-nav .nav-link.nav-user {
+    border-bottom: 0px;
 }
 
 .navbar-nav .nav-link:hover {
     opacity: 0.8;
     border-bottom: 2px solid var(--main-bg-color);
-    transition: all 0.7s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.navbar-nav .nav-link.nav-user:hover {
+    border-bottom: 0px;
+}
+
+.searchbar {
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.rounded-circle {
+    width: 48px;
+    height: 48px;
 }
 
 .subnav {
@@ -69,13 +168,7 @@ body {
     border: 1px solid white;
 }
 
-#ofertas .sale-item .dark-background {
-    position: absolute;
-    background-color: black;
-    opacity: 0.6;
-}
-
-#ofertas .sale-item .sale-description {
+#ofertas .sale-description {
     position: absolute;
     top: 30%;
     width: 100%;
@@ -97,18 +190,23 @@ body {
     margin: 10px auto;
 }
 
+#ofertas .sale-item .sale-description h5 {
+    font-size: 14px;
+}
+
 #ofertas .sale-item .sale-description p {
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 300;
 }
- 
-#ofertas .sale-item .sale-description span {
-    display: inline-block;
-    text-align: center;
-    height: 3px;
-    width: 30px;
-    border-bottom: 2px solid var(--main-bg-color);
+
+#ofertas .sale-item:hover .dark-background{
+    opacity: 0.8;
+    transition: all 0.3s ease-in;
+}
+
+#ofertas .sale-img-background {
+    overflow: hidden;
 }
 
 /* SIDEBAR */
@@ -130,7 +228,7 @@ body {
 
 #sidebar a:hover li {
     border: 2px solid var(--main-bg-color);
-    transition: all 0.7s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 #sidebar ul {
@@ -154,6 +252,50 @@ body {
     color: white;
     font-size: 26px;
     margin-bottom: 10px;
+}
+
+#sidebar .sale-description {
+    margin-top: 5px;
+}
+
+#sidebar .sale-description h4 {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    display: inline-flex;
+}
+
+#sidebar .sale-description h5 {
+    color: red;
+    text-decoration: line-through;
+    font-size: 12px;
+    display: inline-flex;
+}
+
+#sidebar .sale-description span, #ofertas .sale-description span {
+    color: white;
+}
+
+/* DETAIL */
+
+#car-detail h2 {
+    text-transform: uppercase;
+    letter-spacing: 1.1;
+    font-size: 32px;
+}
+
+#car-detail h5 {
+    text-transform: uppercase;
+    letter-spacing: 1.1;
+    font-size: 18px;
+}
+
+#car-detail h6 {
+    font-size: 14px;
+}
+
+#car-detail img {
+    border: solid 2px var(--main-bg-color);
 }
 
 /* FOOTER */
@@ -193,4 +335,24 @@ footer a:hover {
 #subfooter p {
     margin-bottom: 0px;
     font-size: 12pxs;
+}
+
+@media(max-width: 992px) {
+    .searchbar {
+        width: 90%;
+    }
+
+    .nav-item.m-left {
+        margin: 15px !important;
+    }
+
+    .nav-item .rounded-circle {
+        margin-left: 10px;
+    }
+}
+
+@media(max-width: 500px) {
+    .searchbar {
+        width: 85%;
+    }
 }
